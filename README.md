@@ -1,7 +1,7 @@
 backbone-template-context-mixin
 ===============================
 
-A Backbone model mixin for generating complex template() contexts quickly. Capable of building contexts automatically from model attributes and functions via introspection or from a list of model functions.
+A Backbone model mixin for generating complex ```template()``` contexts quickly. Capable of building contexts automatically from model attributes and functions via introspection or from a list of model functions.
 
 For example, consider the following usage example:
 
@@ -34,8 +34,8 @@ This is a ready to inject template context without requiring additional helpers 
 
 ## getContext([Object json])
 
-This method is adding to all mixed models. As a result, you should call ```model.getContext()``` 
-instead of ```model.toJSON()``` when creating a context to pass to a ```template()``` function.
+You should call ```model.getContext()``` instead of ```model.toJSON()``` when creating a context to pass to 
+a ```template()``` function.
 
 When invoked, this method combines
 
@@ -60,6 +60,6 @@ This is helpful for porting existing models.
 
 ## templateContextExclusions()
 
-Optionally implement this function to return an array of function names to exlude from the template context.
+Optionally implement this method to return an array of function names to exlude from the template context.
 
 This is helpful for porting existing models.
