@@ -37,7 +37,8 @@ In this case, the resulting ```cxt``` would be:
 }
 ```
 
-Which you could use in Handlebars like so:
+This is a ready to inject template context without requiring additional helpers or maintaining composite 
+attributes which you could use in Handlebars like so:
 
 ```html
 <div id="welcome">
@@ -48,8 +49,6 @@ Which you could use in Handlebars like so:
     {{/if}}
 </div>
 ```
-
-This is a ready to inject template context without requiring additional helpers or maintaining composite attributes.
 
 ## getContext([Object json])
 
