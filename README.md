@@ -9,12 +9,18 @@ For example, consider the following usage example:
 var UserModel = Backbone.Model.extend({
     fullName : function() {
         return this.get('firstName') + ' ' + this.get('lastName');
+    },
+    
+    isBirthday : function() {
+        var now = new Date();
+        return this.get('birthday') == now.getTime();
     }
 });
 
 var user = new UserModel({
     firstName : 'Bob',
-    lastName : 'Jones'
+    lastName : 'Jones',
+    birthday : 10000000000
 });
 
 var cxt = user.getContext();
@@ -26,8 +32,21 @@ In this case, the resulting ```cxt``` would be:
 {
     firstName : "Bob",
     lastName : "Jones",
-    fullName : "Bob Jones"
+    fullName : "Bob Jones",
+    isBirthday : false
 }
+```
+
+Which you could use in Handlebars like so:
+
+```html
+<div id="welcome">
+    {{#if isBirthday}}
+    Happy Birthday, {{fullName}}!
+    {{else}}
+    Nice to see you, {{firstName}}.
+    {{/if}}
+</div>
 ```
 
 This is a ready to inject template context without requiring additional helpers or maintaining composite attributes.
